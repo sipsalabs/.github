@@ -22,7 +22,7 @@
 | Qwen3-14B | 14B-class | **1.00403×** | SipsaLabs/qwen3-14b-uc-v3-bpw5 |
 | Qwen3-8B | 8B-class | **1.00440×** | SipsaLabs/qwen3-8b-uc-v3-bpw5 |
 | Mistral-7B-v0.3 | **New this week** — tightest dense 7B-class lossless 5-bit on the public HF Hub | **1.00548×** | SipsaLabs/mistral-7b-v0.3-uc-v3-bpw5 |
-| Phi-3-mini-4k-instruct | Cross-arch confirm | **1.00624×** | SipsaLabs/phi-3-mini-4k-instruct-uc-v3-bpw5 |
+| Phi-3-mini-4k-instruct | Tightest dense ratio (seq_len=128 caveat) | **1.00262×** | SipsaLabs/phi-3-mini-4k-instruct-uc-v3-bpw5 |
 
 22 architectures verified end-to-end (0.6B → 405B, dense + Mixture-of-Experts + state-space). Full matrix at [huggingface.co/SipsaLabs](https://huggingface.co/SipsaLabs).
 
