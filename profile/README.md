@@ -8,7 +8,7 @@
 
 ## Product 1: [UltraCompress](https://github.com/sipsalabs/ultracompress) — lossless 5-bit transformer compression
 
-**The flagship.** SHA-256 verifiable bit-identical reconstruction at customer load. Different contract than every other 4–5 bit library: we don't target a quality threshold ("sub-1% PPL drift"), we target a **reconstruction contract** — the customer artifact reproduces exactly the dequantized weight the trainer measured during distillation. If anything drifts, `uc verify` fails loudly.
+**The flagship.** SHA-256 verifiable bit-identical reconstruction at customer load. Different contract than every other 4–5 bit library: we don't target a quality threshold ("sub-1% PPL drift"), we target a **reconstruction contract** — the customer artifact reproduces exactly the weight value Sipsa's compressor reconstructs. If anything drifts, `uc verify` fails loudly.
 
 **v0.6.9 shipped 2026-05-15** — RCE-class fix on `torch.load()` paths + MANIFEST-scrubbed sdist. v0.6.7 + v0.6.8 yanked from PyPI. Upgrade: `pip install --upgrade ultracompress`.
 
@@ -61,7 +61,7 @@ Bring a model, we deliver a verified-lossless 5-bit pack you can run on your har
 
 - **PyPI v0.6+** under [BUSL-1.1](https://github.com/sipsalabs/ultracompress/blob/main/LICENSE) with **Additional Use Grant**: free for sub-$1M ARR companies, research, and individuals. Auto-converts to Apache 2.0 four years after each release.
 - **v0.5.x** stays under Apache-2.0 forever on the `legacy/0.5.x` branch.
-- Codec internals patent-protected (USPTO provisionals filed 2026-04-25; supplement filing landed 2026-05-09; continuations through 2027).
+- Codec internals patent-protected (U.S. patent applications pending; additional U.S. patent applications pending; continuations through 2027).
 
 ---
 
