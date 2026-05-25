@@ -10,21 +10,25 @@
 
 **The flagship.** SHA-256 verifiable bit-identical reconstruction at customer load. Different contract than every other 4–5 bit library: we don't target a quality threshold ("sub-1% PPL drift"), we target a **reconstruction contract** — the customer artifact reproduces exactly the weight value Sipsa's compressor reconstructs. If anything drifts, `uc verify` fails loudly.
 
-**v0.6.9 shipped 2026-05-15** — RCE-class fix on `torch.load()` paths + MANIFEST-scrubbed sdist. v0.6.7 + v0.6.8 yanked from PyPI. Upgrade: `pip install --upgrade ultracompress`.
+**v0.6.16 (current PyPI release)** — the public `pip install ultracompress` package is intentionally minimal: a small, dependency-free CLI for catalog browsing (`uc catalog`), trying compressed models against `api.sipsalabs.com` (`uc try`), and pack structure + download-integrity verification (`uc verify`). The codec itself is patent-pending and is not distributed in the public package; bit-identical reconstruction verification of a pack is performed by Sipsa Labs under engagement. Upgrade: `pip install --upgrade ultracompress`.
 
-### This week's verified PPL ratios (5 bpw vs bf16, FineWeb-edu held-out tail, seq_len=1024, seed=42)
+### Verified PPL ratios (5 bpw vs bf16, FineWeb-edu held-out tail, seq_len=1024, seed=42)
 
 | Model | Class | PPL ratio | HF artifact |
 |---|---|---:|---|
 | Hermes-3-Llama-3.1-405B | First 405B-class lossless 5-bit on a single 32 GB consumer GPU | **1.0066×** | [SipsaLabs/hermes-3-llama-3.1-405b-uc-v3-bpw5](https://huggingface.co/SipsaLabs/hermes-3-llama-3.1-405b-uc-v3-bpw5) |
-| Mixtral-8x7B (47B MoE) | Tightest MoE result | **1.00368×** | SipsaLabs/mixtral-8x7b-v0.1-uc-v3-bpw5 |
-| Qwen3-1.7B-Base | Tightest dense floor | **1.00401×** | SipsaLabs/qwen3-1.7b-base-uc-v3-bpw5 |
+| Qwen3-235B-A22B | 235B-class MoE | **1.00377×** | SipsaLabs/qwen3-235b-a22b-uc-v3-bpw5 |
+| Mixtral-8x22B-v0.1 | 141B-class MoE | **1.00611×** | SipsaLabs/mixtral-8x22b-v0.1-uc-v3-bpw5 |
+| Phi-3.5-MoE-instruct | 41.9B MoE — tightest MoE ratio | **1.00129×** | SipsaLabs/phi-3.5-moe-instruct-uc-v3-bpw5 |
+| Mixtral-8x7B-v0.1 | 47B MoE | **1.00368×** | SipsaLabs/mixtral-8x7b-v0.1-uc-v3-bpw5 |
+| Phi-4 | 14B-class dense | **1.00506×** | SipsaLabs/phi-4-uc-v3-bpw5 |
 | Qwen3-14B | 14B-class | **1.00403×** | SipsaLabs/qwen3-14b-uc-v3-bpw5 |
 | Qwen3-8B | 8B-class | **1.00440×** | SipsaLabs/qwen3-8b-uc-v3-bpw5 |
-| Mistral-7B-v0.3 | **New this week** — tightest dense 7B-class lossless 5-bit on the public HF Hub | **1.00548×** | SipsaLabs/mistral-7b-v0.3-uc-v3-bpw5 |
+| Mistral-7B-v0.3 | Tightest dense 7B-class lossless 5-bit on the public HF Hub | **1.00548×** | SipsaLabs/mistral-7b-v0.3-uc-v3-bpw5 |
+| Qwen3-1.7B-Base | Tightest dense floor (1.7B class) | **1.00401×** | SipsaLabs/qwen3-1.7b-base-uc-v3-bpw5 |
 | Phi-3-mini-4k-instruct | Tightest dense ratio (seq_len=128 caveat) | **1.00262×** | SipsaLabs/phi-3-mini-4k-instruct-uc-v3-bpw5 |
 
-22 architectures shipped end-to-end, 14 PPL-verified (0.6B → 405B, dense + Mixture-of-Experts + state-space). Full matrix at [huggingface.co/SipsaLabs](https://huggingface.co/SipsaLabs).
+22 architectures shipped end-to-end, **19 PPL-verified** (0.6B → 405B, dense + Mixture-of-Experts). Full matrix at [huggingface.co/SipsaLabs](https://huggingface.co/SipsaLabs).
 
 ### Try it (3 commands)
 
