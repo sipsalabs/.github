@@ -28,7 +28,7 @@
 | Qwen3-1.7B-Base | Tightest dense floor (1.7B class) | **1.00401×** | SipsaLabs/qwen3-1.7b-base-uc-v3-bpw5 |
 | Phi-3-mini-4k-instruct | Tightest dense ratio (seq_len=128 caveat) | **1.00262×** | SipsaLabs/phi-3-mini-4k-instruct-uc-v3-bpw5 |
 
-22 architectures shipped end-to-end, **19 PPL-verified** (0.6B → 405B, dense + Mixture-of-Experts). Full matrix at [huggingface.co/SipsaLabs](https://huggingface.co/SipsaLabs).
+22 packs shipped end-to-end, **19 PPL-verified** (0.6B → 405B, dense + Mixture-of-Experts). Full matrix at [huggingface.co/SipsaLabs](https://huggingface.co/SipsaLabs).
 
 ### Try it (3 commands)
 
