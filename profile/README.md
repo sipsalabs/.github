@@ -15,7 +15,7 @@ model runs end-to-end on a single 32 GB consumer GPU at a **1.0066× perplexity 
 pip install ultracompress
 ```
 
-### What''s live
+### What's live
 - **UltraCompress** — the compression engine (public CLI on PyPI).
 - **Sipsa Inference** — OpenAI-compatible API serving compressed weights (api.sipsalabs.com/v1).
 - **Compression-as-a-Service** — bring a model, get a verified pack you run yourself.
@@ -27,7 +27,7 @@ Hermes-3-Llama-3.1-405B reconstructs at **1.0066×** on a single 32 GB GPU.
 
 ### Why it matters
 Models are outgrowing the hardware that runs them. Whoever makes any model run
-anywhere — cheaper, faster, provably intact — becomes the layer every AI
+anywhere — cheaper, leaner, provably intact — becomes the layer every AI
 deployment passes through. We start where verifiable quality is non-negotiable,
 and expand outward.
 
