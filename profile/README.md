@@ -1,36 +1,27 @@
 # Sipsa Labs
 
-**The efficiency layer for AI.** We build compression and systems that fit any
-model onto the hardware you already have — near-losslessly, and with
-reconstruction you can verify.
+**Embedded intelligence for machines.**
+We build edge-AI that lives inside the machine itself — nodes that perceive, understand, and act, with no cloud in the loop.
 
-### UltraCompress — our flagship
-Near-lossless 5-bit transformer compression (~1% perplexity cost; the 5-bit pack
-is lossy) with reproducible, **SHA-256-verifiable reconstruction to the validated
-artifact** — a deterministic decode back to the exact quantized weights we
-evaluated, **not bit-identical to the original bf16 model**. A 405B-parameter
-model runs end-to-end on a single 32 GB consumer GPU at a **1.0066× perplexity ratio**.
+### Sentio — chapter one
+A small, passive sensing node for the drones radios can't hear. A new class of FPV drone flies its control link over **optical fiber** — zero RF emissions — so the RF-based detection most defenses rely on never sees it. Propulsion, however, can't be muted.
 
-```bash
-pip install ultracompress
-```
+Sentio pairs the cue that can't be turned off with the sensor that confirms it:
 
-### What's live
-- **UltraCompress** — the compression engine (public CLI on PyPI).
-- **Sipsa Inference** — OpenAI-compatible API serving compressed weights (api.sipsalabs.com/v1).
-- **Compression-as-a-Service** — bring a model, get a verified pack you run yourself.
+- **Hear** — 360° passive acoustic cue, no emissions, day or night
+- **Confirm** — a camera interrogates the cued bearing: drone or not-drone
+- **Act** — fused tracks publish in standard formats (TAK-compatible) to systems you already run
+- A **detection layer, not a weapon** — and the whole loop runs on-device, on commodity edge silicon
 
-### Verified
-**23 architectures** verified end-to-end (22 PPL-verified + 1 ViT cosine; 0.6B–405B;
-dense + MoE + SSM + ViT) — reproducible public artifacts, not internal benchmarks.
-Hermes-3-Llama-3.1-405B reconstructs at **1.0066×** on a single 32 GB GPU.
+### Where it actually stands
+Working prototype runs end-to-end on real edge hardware today. Detection behavior is validated in **physics-based simulation** — labeled SIM, because simulation is evidence of promise, not performance. The field campaign is the next phase; its numbers will be published **with collection methodology, whether they flatter us or not**. Until then you will not find a detection-accuracy claim from this company anywhere.
 
-### Why it matters
-Models are outgrowing the hardware that runs them. Whoever makes any model run
-anywhere — cheaper, leaner, provably intact — becomes the layer every AI
-deployment passes through. We start where verifiable quality is non-negotiable,
-and expand outward.
+### The arc
+Defense is chapter one because the need is urgent and specific — not because it's the whole book. The same hear-look-decide loop, retrained, is a node that hears a failing bearing in a motor, an intrusion at a fence line, a pest in a field. Machines with senses and an on-device brain, one fielded mission at a time.
 
-Built in public while the patents are pending. BUSL-1.1 — free for sub-$1M ARR + research.
+### Prior era — archived in public
+From 2025–26 Sipsa Labs built **UltraCompress** (near-lossless LLM weight compression, 23 verified architectures). It was discontinued in June 2026; the research, methodology, and verified results remain public at [sipsalabs.com/research/compression-archive](https://sipsalabs.com/research/compression-archive) — that's what "built in the open" means when a chapter ends. (BUSL-1.1, patents pending.)
 
-**Commercial:** founder@sipsalabs.com · [sipsalabs.com](https://sipsalabs.com) · [PyPI](https://pypi.org/project/ultracompress/)
+---
+
+**Talk to us:** founder@sipsalabs.com · [sipsalabs.com](https://sipsalabs.com) · [/sentio](https://sipsalabs.com/sentio) · [careers](https://sipsalabs.com/careers)
